@@ -251,12 +251,12 @@
                   "datasetName": "e7a62da2",
                   "fields": [
                     {
-                      "name": "Priority",
-                      "expression": "`Priority`"
+                      "name": "avg(Total Price)",
+                      "expression": "AVG(`Total Price`)"
                     },
                     {
-                      "name": "sum(Total Price)",
-                      "expression": "SUM(`Total Price`)"
+                      "name": "Priority",
+                      "expression": "`Priority`"
                     }
                   ],
                   "disaggregated": false
@@ -264,17 +264,25 @@
               }
             ],
             "spec": {
+              "frame": {
+                "description": "All Time",
+                "showDescription": true,
+                "showTitle": true,
+                "title": "Revenue by Order Priority"
+              },
+              "version": 3,
+              "widgetType": "pie",
               "encodings": {
                 "angle": {
-                  "displayName": "Associated Revenue",
-                  "fieldName": "sum(Total Price)",
+                  "fieldName": "avg(Total Price)",
                   "scale": {
                     "type": "quantitative"
-                  }
+                  },
+                  "displayName": "Associated Revenue"
                 },
                 "color": {
-                  "displayName": "Order Priority",
                   "fieldName": "Priority",
+                  "displayName": "Order Priority",
                   "scale": {
                     "mappings": [
                       {
@@ -304,15 +312,7 @@
                 "label": {
                   "show": true
                 }
-              },
-              "frame": {
-                "description": "All Time",
-                "showDescription": true,
-                "showTitle": true,
-                "title": "Revenue by Order Priority"
-              },
-              "version": 3,
-              "widgetType": "pie"
+              }
             }
           },
           "position": {
@@ -463,7 +463,7 @@
             "name": "30fa90f0",
             "multilineTextboxSpec": {
               "lines": [
-                "## Retail Revenue & Supply Chain Overview"
+                "## Retail Revenue & Supply Chain Overview Learning"
               ]
             }
           },
